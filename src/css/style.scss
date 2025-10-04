@@ -1,4 +1,12 @@
+$bg-color:#000;
+$color:#fff;
+
 body{
-    background-color:#000;
-    color:#fff
+    background: $bg-color;
+    color: $color;
+
+    h1 {
+        text-decoration: underline;
+    }
 }
+
