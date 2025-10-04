@@ -25,7 +25,28 @@ module.exports = {
         },
         {
             test: /\.(png|svg|jpg|jpeg|gif)$/i,
-            type: 'asset/resource',
+            use: {
+                loader:  "img-optimize-loader",
+                options: {
+                    compress: {
+                        mode:              "lossless",
+                        quality:           10,
+                        speed:             1,
+                        lossy:             0,
+                        progressive:       true,
+                        interlaced:        false,
+                        strip:             true,
+                        max:               80,
+                        min:               60,
+                        dither:            false,
+                        alpha:             false,
+                        optimizationLevel: 3,
+                        palette:           false,
+                        colorspace:        "srgb",
+
+                    }
+                }
+            }
         }
     ],
   },
