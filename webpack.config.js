@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/js/index.js",
+    entry:   "./src/index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -22,15 +22,18 @@ module.exports = {
                     presets: ["@babel/preset-env"]
                 }
             }
+        },
+        {
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
         }
     ],
   },
-  plugins: [
-      new HtmlWebpackPlugin({
-      title: "Webpack",
-      template: "./src/index.html"
-  })
-  ],
+    plugins: [
+        new HtmlWebpackPlugin ( {
+            title: "Webpack",
+        } )
+    ],
   devServer: {
       port: 5000,
       open: true,
