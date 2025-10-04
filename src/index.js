@@ -1,3 +1,6 @@
-import Note from "./note.js";
+import Logo from './componenti/logo';
 
-const nota1 = new Note();
+const logo = new Logo()
+
+document.body.appendChild( logo.init );
+
