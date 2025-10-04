@@ -12,6 +12,16 @@ module.exports = {
         {
             test: /\.(css|s[ac]ss)$/i,
             use: ["style-loader", "css-loader", "sass-loader"]
+        },
+        {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: "babel-loader",
+                options: {
+                    presets: ["@babel/preset-env"]
+                }
+            }
         }
     ],
   },
@@ -28,5 +38,5 @@ module.exports = {
           directory: path.resolve(__dirname, "dist")
       }
   },
-  mode: "development",
+    mode: "none"
 };
