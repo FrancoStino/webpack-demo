@@ -1,5 +1,5 @@
 export default class Drag {
   constructor() {
-    console.log("drag");
+    console.log("Ciao dal costruttore della classe Drag");
   }
 }
